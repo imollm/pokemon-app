@@ -1,0 +1,38 @@
+{
+  "name": "pokemon-app",
+  "version": "1.0.0",
+  "description": "This is a monorepo multipackage about Pokemon web app",
+  "main": "api/bin/www.js",
+  "private": true,
+  "scripts": {
+    "build:app": "npm run build --workspace=app",
+    "start:api": "npm run start --workspace=api",
+    "start": "npm run build:app && npm run start:api",
+    "lint": "eslint ./api ./app"
+  },
+  "engines": {
+    "npm": "7.9.0"
+  },
+  "workspaces": [
+    "app",
+    "api"
+  ],
+  "keywords": [
+    "Pokemon",
+    "WebApp",
+    "Monorepo"
+  ],
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-node": "^11.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "author": "Ivan Moll",
+  "license": "ISC"
+}

@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-black
+    }
+
+    nav {
+        @apply bg-yellow-400 border-b-8 border-b-sky-600;
+    }
+
+    footer {
+        @apply bg-yellow-400 py-10 flex justify-center border-t-8 border-t-sky-600;
+    }
+}
+
+.btn {
+    @apply py-2 px-4 rounded;
+}
+
+.btn-blue {
+    @apply bg-blue-500 text-white;
+}
+
+.btn-blue:hover {
+    @apply bg-blue-700;
+}
+
+.card {
+    @apply rounded overflow-hidden shadow-lg;
+}
+
+.attr {
+    @apply text-gray-300 font-bold;
+}
+
+.attr-val {
+    @apply text-yellow-400 italic;
+}
+
+.spin {
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(359deg);
+    }
+}
+
+@-webkit-keyframes rotation {
+    from {
+      -webkit-transform: rotateY(0deg);
+    }
+    to {
+      -webkit-transform: rotateY(359deg);
+    }
+}
+
+@-moz-keyframes rotation {
+    from {
+      -moz-transform: rotateY(0deg);
+    }
+    to {
+      -moz-transform: rotateY(359deg);
+    }
+}

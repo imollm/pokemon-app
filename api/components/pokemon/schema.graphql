@@ -1,0 +1,23 @@
+type Query {
+    lastPokemons(limit: Int): [Pokemon]
+    pokemons: [Pokemon]
+    pokemonById(id: ID!): Pokemon
+    searchPokemon(toSearch: String): [Pokemon]
+}
+
+type Mutation {
+    addNewPokemon(name: String!, type: [String]!, HP: Int, attack: Int, defense: Int, SPAttack: Int, SPDefense: Int, speed: Int, image: String): Pokemon
+}
+
+type Pokemon {
+    id: String
+    name: String
+    type: [String]
+    HP: Int
+    attack: Int
+    defense: Int
+    SPAttack: Int
+    SPDefense: Int
+    speed: Int
+    image: String
+}

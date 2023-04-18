@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  app:
+    restart: always
+    build: .
+    container_name: poke_app
+    ports:
+      - ${API_INCOMING_PORT}:${API_OUTCOMING_PORT}
+      - ${API_INCOMING_DEBUG_PORT}:${API_OUTCOMING_DEBUG_PORT}
+    depends_on:
+      - database
+
+  database:
+    image: mongo
+    container_name: poke_db
+    restart: always
+    ports:
+      - ${MONGO_INCOMING_PORT}:${MONGO_OUTCOMING_PORT}
+    volumes:
+      - poke_vol:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+
+volumes:
+  poke_vol:
